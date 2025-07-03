@@ -8,9 +8,9 @@ Laporan ini berisi dokumentasi hasil pengerjaan Praktikum 1 sampai Praktikum 3 u
 
 | No | Praktikum                            | Link                                          |
 | -- | ------------------------------------ | --------------------------------------------- |
-| 1  | Praktikum 1: Pengenalan CodeIgniter  | [Lihat](#praktikum-1-pengenalan-codeigniter)  |
-| 2  | Praktikum 2: CRUD dengan CodeIgniter | [Lihat](#praktikum-2-crud-dengan-codeigniter) |
-| 3  | Praktikum 3: View Layout & View Cell | [Lihat](#praktikum-3-view-layout--view-cell)  |
+| 1  | Praktikum 1: Pengenalan CodeIgniter  | [KLIK DISINI](#praktikum-1-pengenalan-codeigniter)  |
+| 2  | Praktikum 2: CRUD dengan CodeIgniter | [KLIK DISINI](#praktikum-2-crud-dengan-codeigniter) |
+| 3  | Praktikum 3: View Layout & View Cell | [KLIK DISINI](#praktikum-3-view-layout--view-cell)  |
 
 ## 👨‍🎓 Biodata
 
@@ -144,6 +144,67 @@ php spark
 📷 **Screenshot View Index & Detail:** &#x20;
 
 ---
+
+## Pertanyaan dan Jawaban
+
+### 1. Apa manfaat utama dari penggunaan View Layout dalam pengembangan aplikasi?
+
+Manfaat utama penggunaan View Layout dalam pengembangan aplikasi adalah:
+
+- **Konsistensi Tampilan**: Memastikan tampilan yang konsisten di seluruh halaman aplikasi
+- **Pemisahan Konten dan Layout**: Memungkinkan pemisahan yang jelas antara konten dan layout
+- **Penggunaan Kembali Kode**: Mengurangi duplikasi kode dengan menggunakan layout yang sama untuk halaman berbeda
+- **Pemeliharaan Lebih Mudah**: Perubahan pada layout hanya perlu dilakukan di satu tempat
+- **Struktur Kode Lebih Terorganisir**: Membantu mengorganisir kode dengan lebih baik dan lebih mudah dibaca
+
+### 2. Jelaskan perbedaan antara View Cell dan View biasa.
+
+Perbedaan antara View Cell dan View biasa:
+
+| View Cell                                                 | View Biasa                                                          |
+| --------------------------------------------------------- | ------------------------------------------------------------------- |
+| Komponen independen dengan logika sendiri                 | Tidak memiliki logika pemrosesan data sendiri                       |
+| Dapat dipanggil dari berbagai tampilan                    | Biasanya digunakan sebagai tampilan utama atau bagian dari tampilan |
+| Memiliki class dedicated dengan metode render             | Hanya file template tanpa class                                     |
+| Cocok untuk widget, sidebar, menu yang digunakan berulang | Cocok untuk tampilan halaman utama                                  |
+| Dapat memanggil model dan mengambil data                  | Menerima data dari controller                                       |
+| Dapat dirender dengan parameter                           | Biasanya tidak menerima parameter langsung                          |
+
+### 3. Ubah View Cell agar hanya menampilkan post dengan kategori tertentu.
+
+Untuk mengubah View Cell agar hanya menampilkan post dengan kategori tertentu, kita perlu:
+
+1. Menambahkan kolom kategori pada tabel artikel
+2. Memodifikasi class ArtikelTerkini untuk menerima parameter kategori
+3. Menggunakan parameter tersebut untuk memfilter artikel yang ditampilkan
+
+Berikut implementasinya:
+
+```php
+// Di Layout Main.php, panggil dengan parameter kategori
+<?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'tutorial']) ?>
+
+// Modifikasi ArtikelTerkini.php
+public function render($kategori = null)
+{
+    $model = new ArtikelModel();
+
+    if ($kategori) {
+        $artikel = $model->where('kategori', $kategori)
+                    ->orderBy('created_at', 'DESC')
+                    ->limit(5)
+                    ->findAll();
+    } else {
+        $artikel = $model->orderBy('created_at', 'DESC')
+                    ->limit(5)
+                    ->findAll();
+    }
+
+    return view('components/artikel_terkini', ['artikel' => $artikel]);
+}
+```
+
+
 
 ## ✅ Kesimpulan
 
