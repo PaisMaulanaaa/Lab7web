@@ -3,7 +3,7 @@
   <img src="https://www.svgrepo.com/show/353579/codeigniter.svg" width="100" alt="CodeIgniter 4 Logo">
 </div>
 
-# 📌 Laporan Tugas Praktikum 1-3
+# 📌 Laporan Tugas Praktikum 1-3 & 7
 
 Dokumen ini merupakan laporan tugas untuk praktikum 1, 2, dan 3 pada mata kuliah Pemrograman Website 2. Setiap bagian praktikum membahas konsep fundamental hingga implementasi nyata menggunakan framework CodeIgniter 4.
 
