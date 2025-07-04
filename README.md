@@ -533,7 +533,7 @@ CREATE TABLE kategori (
 ```
 
 **Screenshot:**
-![alt text](<Cuplikan layar 2025-07-04 225849.png>)
+![alt text](<gambar/Cuplikan layar 2025-07-04 225849.png>)
 
 ### 3. Modifikasi Tabel Artikel
 
@@ -548,8 +548,6 @@ ADD CONSTRAINT fk_kategori_artikel
 FOREIGN KEY (id_kategori) REFERENCES kategori(id_kategori);
 ```
 
-**Screenshot:**
-![alt text]
 
 ### 4. Membuat Model Kategori
 
