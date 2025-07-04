@@ -489,6 +489,9 @@ public function render(string $kategori = null)
 }
 ```
 
+# Praktikum 7: Relasi Tabel dan Query Builder
+
+
 ## Kesimpulan Akhir
 
 Dalam rangkaian praktikum ini, saya telah berhasil mengimplementasikan konsep-konsep kunci dalam CodeIgniter 4, mulai dari dasar-dasar MVC, routing, hingga fitur-fitur lanjutan seperti CRUD, View Layout, dan View Cell. Penggunaan View Layout sangat membantu dalam menciptakan tampilan yang konsisten, sementara View Cell menyediakan cara yang efisien untuk mengelola komponen UI yang dapat digunakan kembali. Melalui praktikum ini, saya mendapatkan pemahaman yang lebih baik tentang cara membangun aplikasi web yang terstruktur, modular, dan mudah dikelola.
