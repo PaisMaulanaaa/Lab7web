@@ -950,3 +950,4 @@ Praktikum ini berhasil mengimplementasikan relasi One-to-Many antara tabel kateg
 
 Praktikum ini memberikan pemahaman yang lebih dalam tentang cara kerja database relational dan penggunaan Query Builder dalam framework CodeIgniter 4.
 
+## TERIMA KASIH
